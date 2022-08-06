@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="/show.css">
+    <title>Document</title>
+</head>
+<body>
+   <h1 >Todo List</h1>
+   <br>
+    <% for(Todo of Todo_all){ %> 
+    <div><h2><%= Todo.title %> </h2>  <p> LastDate : <%= Todo.deadline %> </p> <button class="detail-button"><a href="detail/<%= Todo._id%>"> detail </a></button>
+    <p class="date"><%= Todo.date %> </p>
+    </div> 
+    <% } %> 
+    
+    
+    <button class="btn btn-dark"><a href="/addTodo">add new</a></button>
+
+<!-- <h1>The best way to remember task</h1> -->
+</body>
+</html>
