@@ -9,7 +9,7 @@
     <title>Document</title>
 </head>
 <body>
-   <h1 >Todo List</h1>
+   <h1>Todo List <a class="btn btn-primary" href="/todo/signup">Logout</a></h1>
    <br>
     <% for(Todo of Todo_all){ %> 
     <div><h2><%= Todo.title %> </h2>  <p> LastDate : <%= Todo.deadline %> </p> <button class="detail-button"><a href="detail/<%= Todo._id%>"> detail </a></button>

@@ -4,6 +4,7 @@ const mongoose=require('mongoose')
 const path=require('path')
 const method_override=require('method-override')
 const ToDo=require('../models/Todo.js')
+const Auth=require('../models/Authentication.js')
 
 mongoose.connect('mongodb://localhost:27017/ToDo').then(()=>{
     console.log("connected")
@@ -84,10 +85,42 @@ app.put('/todo/:id/edit',async (req,res)=>{
     res.redirect(`/detail/${id}`);
 })
 
+app.get('/todo/signup',async (req,res)=>{
+    res.render('./signUp.ejs');
+})
+
+app.get('/todo/login',async (req,res)=>{
+    res.render('./login.ejs');
+})
+
+app.post('/todo/signup',async (req,res)=>{
+    const data=req.body;
+    const newUser=await new Auth(data);
+    newUser.save();
+    console.log(newUser);
+    res.redirect('/todo/login')
+})
+
 
 app.get('/testing',(req,res) => {
     console.log('hello from express');
     res.send('working correctly');
+})
+
+app.post("/todo/login",async (req,res)=>{
+    const email=req.body.email;
+    //console.log(email)
+    const password=req.body.password;
+    //console.log(password)
+    const checkUser=await Auth.findOne({email:email});
+    //console.log(checkUser);
+    // console.log(checkUser.password)
+   if(checkUser!==null){
+    if(checkUser.password===password){
+      return res.redirect('/display')
+    }
+}
+    res.redirect('/todo/signUp')
 })
 
 

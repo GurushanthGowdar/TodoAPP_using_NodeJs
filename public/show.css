@@ -55,6 +55,9 @@ p{
     
 }
 
+h1 a{
+    float: right;
+}
 .detail-button{
     display: block;
     background-color: black;

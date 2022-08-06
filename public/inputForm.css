@@ -13,6 +13,10 @@ body{
       /* margin:20px 200px 0px 20px ; */
 }
 
+p{
+margin-left: 330px;
+}
+
 h1{
     font-weight: bold;
     font-size: 60px;
@@ -55,9 +59,9 @@ input,textarea{
 button{
     background-color: black;
     color: white;
-    width: 80px;
+    width: 100px;
     height: 30px;
-    margin: 20px 0px 50px 500px ;
+    margin: 20px 0px 50px 400px ;
     font-weight: bold;
     border-radius: 10px;
 }
