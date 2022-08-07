@@ -14,20 +14,38 @@
         <%= find.title %> 
     </h1>
 </div>
-    <h2></h2><p><%= find.description %> </p>
+<div class="container-fluid">
+<div class="row ml-3">
+    <div class="col-md-6 ab mt-sm-4 card">
+
+    <h2></h2><p><%= find.description %></p>
     <br>
     <br>
-    <h2>Last date:</h2><p><%= find.deadline %> </p>
+    <h2>Last date:</h2><p><%= find.deadline %></p>
     <br>
     <br>
-    <h2>status :</h2><p><%= find.taskDone %> </p>
+    <h2>status :</h2><p><%= find.taskDone %></p>
     <br>
-    <img src="<%= find.image %>"  alt="note image">
-   <div class="Buttons">
+</div>
+    <div class="col-md-6">
+        <img src="<%= find.image %>"  alt="note image">
+    </div>
+
+</div>
+</div>
+<!-- <div class="container-fluid">
+<div class="row">
+   
+</div>
+</div> -->
+    <div class="Buttons">
+        
+
     <a href="/display" class="btn btn-sm btn-dark" id="anchor1">back</a>
-    <a href="/todo/<%= find._id %>/edit " class="btn btn-sm btn-dark" id="anchor2">Edit</a>
+    <a href="/todo/<%= find._id %>/edit" class="btn btn-sm btn-dark" id="anchor2">Edit</a>
     <form action="/todo/<%= find._id %>/delete?method_override=DELETE" id="anchor1" method="POST" ><button id="btn1" class="btn btn-sm btn-dark" >delete</button></form>
 </div>
+
 
 <h1 class="head card-header">All you need is One</h1>
 </body>
